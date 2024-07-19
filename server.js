@@ -9,6 +9,14 @@ const PORT = 3000;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+/*
+checking git merge updated 
+exanpl edited code
+console.log(123);
+console.log(123);console.log(123);console.log(123);
+*/
+
+
 // Serve static files from the "src" directory
 app.use(express.static(path.join(__dirname, 'src')));
 
@@ -22,3 +30,8 @@ app.post('/send-message', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}/`);
 });
+/*
+exanpl edited code
+console.log(123);
+console.log(123);console.log(123);console.log(123);
+*/
