@@ -5,37 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <title>Contact - Medha XL</title>
-    <script>
-        async function handleSubmit(event) {
-            event.preventDefault(); // Prevent default form submission
-
-            const form = event.target;
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData.entries());
-
-            try {
-                const response = await fetch('/send-message', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(data),
-                });
-
-                const result = await response.json();
-                const messageDiv = document.getElementById('message');
-
-                if (result.success) {
-                    messageDiv.innerHTML = `<p class="text-green-600">${result.message}</p>`;
-                } else {
-                    messageDiv.innerHTML = `<p class="text-red-600">${result.message}</p>`;
-                }
-
-            } catch (error) {
-                console.error('Error:', error);
-            }
+    <style>
+        .full-screen-iframe {
+            width: 100%;
+            height: calc(100vh - 12rem); /* Adjust for the height of the navbar and margins */
+            border: none;
         }
-    </script>
+        .container-fullscreen {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+    </style>
 </head>
 <body class="bg-gray-100 text-gray-900">
     <nav class="bg-indigo-800 p-4 shadow-lg">
@@ -57,43 +38,21 @@
         </div>
     </nav>
 
-    <section class="container mx-auto px-4 py-10">
+    <section class="container-fullscreen mx-auto px-4 py-10">
         <h1 class="text-4xl font-bold mb-4 text-center">Contact Us</h1>
         <p class="text-lg mb-6 text-center">We'd love to hear from you!</p>
 
-        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
-            <h2 class="text-2xl font-semibold mb-4">Get in Touch</h2>
-            <form onsubmit="handleSubmit(event)">
-                <div class="mb-4">
-                    <label for="name" class="block text-gray-700">Name</label>
-                    <input type="text" id="name" class="mt-1 block w-full p-2 border border-gray-300 rounded" required>
-                </div>
-                <div class="mb-4">
-                    <label for="email" class="block text-gray-700">Email</label>
-                    <input type="email" id="email" class="mt-1 block w-full p-2 border border-gray-300 rounded" required>
-                </div>
-                <div class="mb-4">
-                    <label for="message" class="block text-gray-700">Message</label>
-                    <textarea id="message" rows="4" class="mt-1 block w-full p-2 border border-gray-300 rounded" required></textarea>
-                </div>
-                <button type="submit" class="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-500 transition">Send Message</button>
-            </form>
-        </div>
-
-        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
-            <h2 class="text-2xl font-semibold mb-4">Contact Information</h2>
-            <p><strong>Email:</strong> ramprasadsuthi@medhaxl.in</p>
-            <p><strong>Phone:</strong> +91 9989 4439 15</p>
-            <p><strong>Address:</strong> Visakhapatnam, Andhrapradesh, INDIA</p>
+        <div class="flex-grow">
+            <iframe class="full-screen-iframe" src="https://docs.google.com/forms/d/e/1FAIpQLSdzXzFRN7Q-P7QU3zcUgFysHhzG01g69WWGE4sFUc96ERNMXA/viewform?embedded=true">Loading…</iframe>
         </div>
 
         <div class="text-center mt-6">
             <a href="index.html" class="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-500 transition">Back to Home</a>
         </div>
     </section>
+    
     <footer class="bg-indigo-800 text-center py-4">
         <p class="text-white">&copy; 2024 Medha XL. All rights reserved.</p>
     </footer>
 </body>
 </html>
-
