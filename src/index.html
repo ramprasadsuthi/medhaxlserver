@@ -4,7 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.9/dist/css/splide.min.css">
     <title>Home - Medha XL</title>
+    <style>
+        .splide__slide {
+            margin: 0 0px; /* Adjust the margin to create gap */
+        }
+        .course-card {
+            height: 500px; /* Fixed height for the course cards */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .course-card img {
+            flex-shrink: 0;
+        }
+        .course-card h3 {
+            flex-shrink: 0;
+        }
+        .course-card p {
+            flex-grow: 1;
+        }
+    </style>
 </head>
 <body class="bg-indigo-900 text-gray-100">
     <nav class="bg-indigo-800 p-4 shadow-lg">
@@ -34,45 +55,56 @@
 
     <section class="container mx-auto px-4 py-10">
         <h2 class="text-4xl font-bold mb-6 text-center">Courses Offered</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="bg-gray-100 rounded-lg shadow-lg p-5">
-                <div class="flex justify-between items-center mb-4">
-                    <span class="bg-yellow-500 text-white text-sm font-semibold px-2 py-1 rounded-full ml-2">New Batch</span> <!-- New Batch tag -->
-                    <span class="bg-blue-500 text-white text-sm font-semibold px-2 py-1 rounded-full">Duration: 60 Days</span> <!-- Duration tag -->
-                </div>
-                <img src="img/javafullstack.jpg" alt="Java Full Stack Development" class="w-full h-48 object-cover rounded-lg mb-4">
-                <h3 class="text-xl font-semibold text-red-600 text-center">
-                    <a href="javafullstack.html">Java Full Stack Development</a>
-                </h3>
-                <p class="mt-2 text-gray-700">This course offers comprehensive end-to-end Java development, including front-end, back-end, and database solutions!</p>
-                <div class="mt-4 text-center">
-                    <a href="javafullstack.html" class="mt-4 inline-block bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-500 transition">Read More</a>
-                </div>
+        <div id="course-carousel" class="splide" aria-label="Courses Carousel">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide">
+                        <div class="bg-gray-100 rounded-lg shadow-lg p-5 course-card">
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="bg-yellow-500 text-white text-sm font-semibold px-2 py-1 rounded-full ml-2">New Batch</span> <!-- New Batch tag -->
+                                <span class="bg-blue-500 text-white text-sm font-semibold px-2 py-1 rounded-full">Duration: 60 Days</span> <!-- Duration tag -->
+                            </div>
+                            <img src="img/javafullstack.jpg" alt="Java Full Stack Development" class="w-full h-48 object-cover rounded-lg mb-4">
+                            <h3 class="text-xl font-semibold text-red-600 text-center">
+                                <a href="javafullstack.html">Java Full Stack Development</a>
+                            </h3>
+                            <p class="mt-2 text-gray-700 flex-grow">This course offers comprehensive end-to-end Java development, including front-end, back-end, and database solutions!</p>
+                            <div class="mt-4 text-center">
+                                <a href="javafullstack.html" class="mt-4 inline-block bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-500 transition">Read More</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <div class="bg-gray-100 rounded-lg shadow-lg p-5 course-card">
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="bg-yellow-500 text-white text-sm font-semibold px-2 py-1 rounded-full ml-2">Running Batch</span> <!-- New Batch tag -->
+                                <span class="bg-blue-500 text-white text-sm font-semibold px-2 py-1 rounded-full">Duration: 25 Days</span> <!-- Duration tag -->
+                            </div>
+                            <img src="img/manualtesting.jpg" alt="Manual Testing" class="w-full h-48 object-cover rounded-lg mb-4">
+                            <h3 class="text-xl font-semibold text-red-600 text-center">Manual Testing</h3>
+                            <p class="mt-2 text-gray-700 flex-grow">Manual Testing Concepts, Test Management Tools (QA Touch / ALM), Project Management Tools (JIRA).</p>
+                            <div class="mt-4 text-center">
+                                <a href="manualtesting.html" class="mt-4 inline-block bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-500 transition">Read More</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <div class="bg-gray-100 rounded-lg shadow-lg p-5 course-card">
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="bg-yellow-500 text-white text-sm font-semibold px-2 py-1 rounded-full ml-2">Running Batch</span> <!-- New Batch tag -->
+                                <span class="bg-blue-500 text-white text-sm font-semibold px-2 py-1 rounded-full">Duration: 45 Days</span> <!-- Duration tag -->
+                            </div>
+                            <img src="img/automationtesting.jpg" alt="Automation Testing" class="w-full h-48 object-cover rounded-lg mb-4">
+                            <h3 class="text-xl font-semibold text-red-600 text-center">Automation - Live Project</h3>
+                            <p class="mt-2 text-gray-700 flex-grow">This course is entirely practical, involving a real-time project from start to finish.</p>
+                            <div class="mt-4 text-center">
+                                <a href="automationtesting.html" class="mt-4 inline-block bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-500 transition">Read More</a>
+                            </div>
+                         </div>
+                    </li>
+                    <!-- Add more courses here -->
+                </ul>
             </div>
-            <div class="bg-gray-100 rounded-lg shadow-lg p-5">
-                <div class="flex justify-between items-center mb-4">
-                    <span class="bg-yellow-500 text-white text-sm font-semibold px-2 py-1 rounded-full ml-2">Running Batch</span> <!-- New Batch tag -->
-                    <span class="bg-blue-500 text-white text-sm font-semibold px-2 py-1 rounded-full">Duration: 25 Days</span> <!-- Duration tag -->
-                </div>
-                <img src="img/manualtesting.jpg" alt="Manual Testing" class="w-full h-48 object-cover rounded-lg mb-4">
-                <h3 class="text-xl font-semibold text-red-600 text-center">Manual Testing</h3>
-                <p class="mt-2 text-gray-700">Manual Testing Concepts, Test Management Tools (QA Touch / ALM), Project Management Tools (JIRA)</p>
-                <div class="mt-4 text-center">
-                    <a href="manualtesting.html" class="mt-4 inline-block bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-500 transition">Read More</a>
-                </div>
-            </div>
-            <div class="bg-gray-100 rounded-lg shadow-lg p-5">
-                <div class="flex justify-between items-center mb-4">
-                    <span class="bg-yellow-500 text-white text-sm font-semibold px-2 py-1 rounded-full ml-2">Running Batch</span> <!-- New Batch tag -->
-                    <span class="bg-blue-500 text-white text-sm font-semibold px-2 py-1 rounded-full">Duration: 45 Days</span> <!-- Duration tag -->
-                </div>
-                <img src="img/automationtesting.jpg" alt="Automation Testing" class="w-full h-48 object-cover rounded-lg mb-4">
-                <h3 class="text-xl font-semibold text-red-600 text-center">Automation - Live Project</h3>
-                <p class="mt-2 text-gray-700">This course is designed completely on a practical approach. From beginning to end, you will work on a real-time project in an organization.</p>
-                <div class="mt-4 text-center">
-                    <a href="automationtesting.html" class="mt-4 inline-block bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-500 transition">Read More</a>
-                </div>
-             </div>
         </div>
     </section>
 
@@ -90,5 +122,23 @@
         </div>
     </footer>
     
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.9/dist/js/splide.min.js"></script>
+    <script>
+        document.addEventListener( 'DOMContentLoaded', function () {
+            new Splide( '#course-carousel', {
+                type   : 'loop',
+                perPage: 3,
+                gap    : '20px', // Adjust the gap between slides
+                breakpoints: {
+                    1024: {
+                        perPage: 2,
+                    },
+                    640: {
+                        perPage: 1,
+                    },
+                },
+            } ).mount();
+        } );
+    </script>
 </body>
 </html>
