@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,42 +9,113 @@
     <title>Home - Medha XL</title>
     <style>
         .splide__slide {
-            margin: 0 0px; /* Adjust the margin to create gap */
+            margin: 0 0px;
+            /* Adjust the margin to create gap */
         }
+
         .course-card {
-            height: 500px; /* Fixed height for the course cards */
+            height: 500px;
+            /* Fixed height for the course cards */
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
+
         .course-card img {
             flex-shrink: 0;
         }
+
         .course-card h3 {
             flex-shrink: 0;
         }
+
         .course-card p {
             flex-grow: 1;
         }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content .nested-dropdown:hover .nested-dropdown-content {
+            display: block;
+        }
+
+        .nested-dropdown-content {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .nvbr {
+            position: sticky;
+            top: 0px;
+        }
     </style>
 </head>
+
 <body class="bg-indigo-900 text-gray-100">
-    <nav class="bg-indigo-800 p-4 shadow-lg">
+    <nav class="bg-indigo-800 p-4 shadow-lg nvbr">
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center">
-                <img src="img/logo1.png" alt="Logo" class="h-16 w-25"> <!-- Logo -->
+                <a href="index.html"><img src="img/logo1.png" alt="Logo" class="h-16 w-25"></a> <!-- Logo -->
             </div>
             <div class="flex-grow text-center">
                 <ul class="flex justify-center space-x-6">
                     <li><a href="index.html" class="text-white hover:text-gray-300">Home</a></li>
                     <li><a href="about.html" class="hover:text-gray-300">About</a></li>
                     <li><a href="courses.html" class="hover:text-gray-300">Courses</a></li>
+                    <li class="dropdown relative">
+                        <a href="#" class="hover:text-gray-300">Tools</a>
+                        <div class="dropdown-content absolute bg-white text-black mt-1 rounded shadow-lg">
+                            <a
+                                href="https://appv2.resumebuilder.com/build-resume/section/cntc?skin=null&theme=null&templateflow=selectresume">Resume
+                                Generator</a>
+                            <div class="nested-dropdown relative">
+                                <a href="#" class="hover:text-gray-300">Online Test</a>
+                                <div
+                                    class="nested-dropdown-content absolute bg-white text-black mt-1 rounded shadow-lg">
+                                    <a
+                                        href="https://www.wscubetech.com/resources/html/quiz/its-time-to-quiz-01">HTML</a>
+                                    <a href="https://www.wscubetech.com/resources/css/quiz/its-time-to-quiz">CSS</a>
+                                    <a href="https://www.wscubetech.com/resources/java/quiz/its-time-to-quiz-7">Java</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </li>
                     <li><a href="contact.html" class="hover:text-gray-300">Contact</a></li>
                     <li><a href="team.html" class="hover:text-gray-300">Team</a></li>
                 </ul>
             </div>
             <div class="flex items-center">
-                <a href="https://wa.me/9989443915" target="_blank" class="text-white hover:text-gray-300 flex items-center">
+                <a href="https://wa.me/9989443915" target="_blank"
+                    class="text-white hover:text-gray-300 flex items-center">
                     <img src="img/whatsapp.jpg" alt="WhatsApp" class="h-6 w-6 mr-2"> WhatsApp
                 </a>
             </div>
@@ -53,7 +125,9 @@
     <header class="text-center py-20 bg-gradient-to-r from-blue-700 to-green-700 text-white">
         <h1 class="text-5xl font-extrabold">Welcome to Medha XL</h1>
         <p class="mt-4 text-lg">Professional IT Trainings!</p>
-        <a href="about.html" class="mt-6 inline-block bg-white text-blue-800 px-6 py-3 rounded-lg shadow-lg hover:bg-gray-200 transition">Learn More</a>
+        <a href="about.html"
+            class="mt-6 inline-block bg-white text-blue-800 px-6 py-3 rounded-lg shadow-lg hover:bg-gray-200 transition">Learn
+            More</a>
     </header>
 
     <section class="container mx-auto px-4 py-10">
@@ -64,50 +138,54 @@
                     <li class="splide__slide">
                         <div class="bg-gray-100 rounded-lg shadow-lg p-5 course-card">
                             <div class="flex justify-between items-center mb-4">
-                                <span class="bg-yellow-500 text-white text-sm font-semibold px-2 py-1 rounded-full ml-2">Running Batch</span> <!-- New Batch tag -->
-                                <span class="bg-blue-500 text-white text-sm font-semibold px-2 py-1 rounded-full">Duration: 60 Days</span> <!-- Duration tag -->
+
                             </div>
-                            <img src="img/javafullstack.jpg" alt="Java Full Stack Development" class="w-full h-48 object-cover rounded-lg mb-4">
+                            <img src="img/javafullstack.jpg" alt="Java Full Stack Development"
+                                class="w-full h-48 object-cover rounded-lg mb-4">
                             <h3 class="text-xl font-semibold text-red-600 text-center">
                                 <a href="javafullstack.html">Java Full Stack Development</a>
                             </h3>
-                            <p class="mt-2 text-gray-700 flex-grow">This course offers comprehensive end-to-end Java development, including front-end, back-end, and database solutions.</p>
                             <div class="mt-4 text-center">
-                                <a href="javafullstack.html" class="mt-4 inline-block bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-500 transition">Read More</a>
+                                <a href="javafullstack.html"
+                                    class="mt-4 inline-block bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-500 transition">Read
+                                    More</a>
                             </div>
                         </div>
                     </li>
                     <li class="splide__slide">
                         <div class="bg-gray-100 rounded-lg shadow-lg p-5 course-card">
                             <div class="flex justify-between items-center mb-4">
-                                <span class="bg-yellow-500 text-white text-sm font-semibold px-2 py-1 rounded-full ml-2">Running Batch</span> <!-- New Batch tag -->
-                                <span class="bg-blue-500 text-white text-sm font-semibold px-2 py-1 rounded-full">Duration: 25 Days</span> <!-- Duration tag -->
+                                <span
+                                    class="bg-yellow-500 text-white text-sm font-semibold px-2 py-1 rounded-full ml-2">Running
+                                    Batch</span> <!-- New Batch tag -->
+                                <span
+                                    class="bg-blue-500 text-white text-sm font-semibold px-2 py-1 rounded-full">Duration:
+                                    25 Days</span> <!-- Duration tag -->
                             </div>
-                            <img src="img/manualtesting.jpg" alt="Manual Testing" class="w-full h-48 object-cover rounded-lg mb-4">
-                            <h3 class="text-xl font-semibold text-red-600 text-center">
-                                <a href="manualtesting.html">Manual Testing</a>
-                            </h3>
-                            <p class="mt-2 text-gray-700 flex-grow">Manual Testing Concepts, Test Management Tools (QA Touch / ALM), Project Management Tools (JIRA).</p>
                             <div class="mt-4 text-center">
-                                <a href="manualtesting.html" class="mt-4 inline-block bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-500 transition">Read More</a>
+                                <a href="manualtesting.html"
+                                    class="mt-4 inline-block bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-500 transition">Read
+                                    More</a>
                             </div>
                         </div>
                     </li>
                     <li class="splide__slide">
                         <div class="bg-gray-100 rounded-lg shadow-lg p-5 course-card">
                             <div class="flex justify-between items-center mb-4">
-                                <span class="bg-yellow-500 text-white text-sm font-semibold px-2 py-1 rounded-full ml-2">Running Batch</span> <!-- New Batch tag -->
-                                <span class="bg-blue-500 text-white text-sm font-semibold px-2 py-1 rounded-full">Duration: 45 Days</span> <!-- Duration tag -->
+                                <span
+                                    class="bg-yellow-500 text-white text-sm font-semibold px-2 py-1 rounded-full ml-2">Running
+                                    Batch</span> <!-- New Batch tag -->
+                                <span
+                                    class="bg-blue-500 text-white text-sm font-semibold px-2 py-1 rounded-full">Duration:
+                                    45 Days</span> <!-- Duration tag -->
                             </div>
-                            <img src="img/automationtesting.jpg" alt="Automation Testing" class="w-full h-48 object-cover rounded-lg mb-4">
-                            <h3 class="text-xl font-semibold text-red-600 text-center">
-                                <a href="automationtesting.html">Automation - Live Project</a>
-                            </h3>
-                            <p class="mt-2 text-gray-700 flex-grow">This course is entirely practical, involving a real-time project from start to end And also we can have a good testing knowledge.</p>
+
                             <div class="mt-4 text-center">
-                                <a href="automationtesting.html" class="mt-4 inline-block bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-500 transition">Read More</a>
+                                <a href="pytho.html"
+                                    class="mt-4 inline-block bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-500 transition">Read
+                                    More</a>
                             </div>
-                         </div>
+                        </div>
                     </li>
                      <!-- Python And Web Development Course Added by S V R Vivek Vardhan And Chandu-->
                      <li class="splide__slide">
@@ -151,24 +229,26 @@
     <footer class="bg-indigo-800 text-center py-4">
         <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
             <p class="text-white">&copy; 2024 Medha XL. All rights reserved.</p>
-            
+
             <div class="mt-4 text-center md:mt-0">
-                <p class="text-white">Visitors: 
+                <p class="text-white">Visitors:
                     <script type="text/javascript" src="https://freehitcounters.org/count/fwjm"></script><br>
-                    <a href='https://hauckautoren.de/schreiben-einer-masterarbeit' class="text-indigo-300 hover:underline">Ghostwriter Masterarbeit</a>
-                    <script type='text/javascript' src='https://www.whomania.com/ctr?id=4bcb3f0e044fdab99635da8686d63f3c662a44cf'></script>
+                    <a href='https://hauckautoren.de/schreiben-einer-masterarbeit'
+                        class="text-indigo-300 hover:underline">Ghostwriter Masterarbeit</a>
+                    <script type='text/javascript'
+                        src='https://www.whomania.com/ctr?id=4bcb3f0e044fdab99635da8686d63f3c662a44cf'></script>
                 </p>
             </div>
         </div>
     </footer>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.9/dist/js/splide.min.js"></script>
     <script>
-        document.addEventListener( 'DOMContentLoaded', function () {
-            new Splide( '#course-carousel', {
-                type   : 'loop',
+        document.addEventListener('DOMContentLoaded', function () {
+            new Splide('#course-carousel', {
+                type: 'loop',
                 perPage: 3,
-                gap    : '20px', // Adjust the gap between slides
+                gap: '20px', // Adjust the gap between slides
                 breakpoints: {
                     1024: {
                         perPage: 2,
@@ -177,8 +257,9 @@
                         perPage: 1,
                     },
                 },
-            } ).mount();
-        } );
+            }).mount();
+        });
     </script>
 </body>
+
 </html>
