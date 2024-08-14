@@ -25,6 +25,130 @@
         .course-card p {
             flex-grow: 1;
         }
+        .body1 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background: #f0f0f0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .overlay1 {
+            display: none; /* Initially hidden */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .registration-container1 {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 500px;
+            animation: slideIn 0.5s ease-in-out;
+            position: relative;
+        }
+
+        .logo1 {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .header1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .header1 .h11 {
+            margin: 0;
+            color: #333;
+            font-size: 30px;
+            font-weight: 500;
+        }
+
+        .registration-container1 form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .registration-container1 input, 
+        .registration-container1 select {
+            width: calc(100% - 20px); /* Ensure the select element has the same width */
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .registration-container1 input:focus, 
+        .registration-container1 select:focus {
+            border-color:  #3b82f6;;
+            box-shadow: 0 0 5px rgba(133, 167, 253, 0.5);
+        }
+
+        .registration-container1 button {
+            width: calc(50% - 15px);
+            padding: 10px;
+            background: #3b82f6;;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 10px;
+        }
+
+        .registration-container1 button:hover {
+            background: #3b82f6;
+        }
+
+        .button-container1 {
+            display: flex;
+            
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .popup-button1 {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .error1 {
+            color: blue;
+            font-size: 0.9em;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body class="bg-indigo-900 text-gray-100">
@@ -43,6 +167,7 @@
                 </ul>
             </div>
             <div class="flex items-center">
+                <button class="popup-button" onclick="openPopup()" style="margin-right:20px ;">Registration Form</button>
                 <a href="https://wa.me/9989443915" target="_blank" class="text-white hover:text-gray-300 flex items-center">
                     <img src="img/whatsapp.jpg" alt="WhatsApp" class="h-6 w-6 mr-2"> WhatsApp
                 </a>
@@ -110,6 +235,38 @@
             </div>
         </div>
     </section>
+        <div class="overlay1" id="overlay">
+            <div class="registration-container1">
+                
+                <div class="header1">
+                    <h1 class="h11">Register</h1>
+                </div>
+                <form id="registrationForm1">
+                    <input type="text" id="firstName" placeholder="First Name" required>
+                    <input type="text" id="lastName" placeholder="Last Name" required>
+                    <input type="tel" id="phoneNumber" placeholder="Phone Number" required>
+                    <span class="error" id="phoneError"></span>
+                    <input type="email" id="email" placeholder="Email" required>
+                    <span class="error" id="emailError"></span>
+        
+                    <!-- Dropdown menu for course selection -->
+                    <select id="course" required style="width: 420px;padding: 10px 10px;color: lightslategray;">
+                        <option value="" disabled selected>Courses:</option>
+                        <option value="Python Full Stack Development">Python Full Stack Development</option>
+                        <option value="Java Full Stack Development">Java Full Stack Development</option>
+                        <option value="Automation Testing">Automation Testing</option>
+                        <option value="Software Testing">Software Testing</option>
+                    </select>
+        
+                    <input type="text" id="city" placeholder="City" required>
+                    <input type="text" id="highestQualification" placeholder="Highest Qualification" required>
+                    <div class="button-container1">
+                        <button type="submit" style="background: #3b82f6;">Submit</button>
+                        <button type="reset" onclick="closePopup()" style="background: #3b82f6;">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
 
     <footer class="bg-indigo-800 text-center py-4">
         <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
@@ -142,6 +299,48 @@
                 },
             } ).mount();
         } );
+        function openPopup() {
+            document.getElementById('overlay').style.display = 'flex';
+        }
+
+        function closePopup() {
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            var phoneNumber = document.getElementById('phoneNumber').value;
+            var email = document.getElementById('email').value;
+            var phoneError = document.getElementById('phoneError');
+            var emailError = document.getElementById('emailError');
+            
+            var phoneRegex = /^\d{10}$/;
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            var valid = true;
+            
+            // Validate phone number
+            if (!phoneRegex.test(phoneNumber)) {
+                phoneError.textContent = 'Phone number must be 10 digits.';
+                valid = false;
+            } else {
+                phoneError.textContent = '';
+            }
+            
+            // Validate email
+            if (!emailRegex.test(email)) {
+                emailError.textContent = 'Invalid email format.';
+                valid = false;
+            } else {
+                emailError.textContent = '';
+            }
+            
+            // Prevent form submission if validation fails
+            if (!valid) {
+                event.preventDefault();
+            } else {
+                closePopup(); // Close popup on successful submission
+            }
+        });
     </script>
 </body>
 </html>
