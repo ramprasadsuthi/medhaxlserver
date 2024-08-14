@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 /*
 checking git merge updated 
 exanpl edited code
-console.log(123); 345
+
 console.log(123);console.log(123);console.log(123);
 */
 //this is edited file by rishi aug 13 19:30
