@@ -149,19 +149,78 @@
             margin-top: -10px;
             margin-bottom: 10px;
         }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #3730a3;
+        }
+
+        .dropdown:hover .dropdown-content .nested-dropdown:hover .nested-dropdown-content {
+            display: block;
+        }
+
+        .nested-dropdown-content {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
     </style>
 </head>
 <body class="bg-indigo-900 text-gray-100">
     <nav class="bg-indigo-800 p-4 shadow-lg">
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center">
-                <img src="img/logo1.png" alt="Logo" class="h-16 w-25"> <!-- Logo -->
+                <a href="index.html"><img src="img/logo1.png" alt="Logo" class="h-16 w-25"></a> <!-- Logo -->
             </div>
             <div class="flex-grow text-center">
                 <ul class="flex justify-center space-x-6">
                     <li><a href="index.html" class="text-white hover:text-gray-300">Home</a></li>
                     <li><a href="about.html" class="hover:text-gray-300">About</a></li>
                     <li><a href="courses.html" class="hover:text-gray-300">Courses</a></li>
+                    <li class="dropdown relative">
+                        <a href="#" class="hover:text-gray-300">Tools</a>
+                        <div class="dropdown-content absolute bg-white text-black mt-1 rounded shadow-lg">
+                            <a
+                                href="https://appv2.resumebuilder.com/build-resume/section/cntc?skin=null&theme=null&templateflow=selectresume">Resume
+                                Generator</a>
+                            <div class="nested-dropdown relative">
+                                <a href="#" class="hover:text-gray-300">Online Test</a>
+                                <div
+                                    class="nested-dropdown-content absolute bg-white text-black mt-1 rounded shadow-lg">
+                                    <a
+                                        href="https://www.wscubetech.com/resources/html/quiz/its-time-to-quiz-01">HTML</a>
+                                    <a href="https://www.wscubetech.com/resources/css/quiz/its-time-to-quiz">CSS</a>
+                                    <a href="https://www.wscubetech.com/resources/java/quiz/its-time-to-quiz-7">Java</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </li>
                     <li><a href="contact.html" class="hover:text-gray-300">Contact</a></li>
                     <li><a href="team.html" class="hover:text-gray-300">Team</a></li>
                 </ul>
