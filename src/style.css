@@ -1,0 +1,25 @@
+/* Custom keyframes for Aurora animation */
+@keyframes aurora {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Apply the Aurora animation */
+.animate-aurora {
+    background: linear-gradient(270deg, #283a6c, #015869, #b5b9dc, #7088c6);
+    background-size: 400% 400%;
+    animation: aurora 15s ease infinite;
+}
+
+/* Glassmorphism effect */
+.glass {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
