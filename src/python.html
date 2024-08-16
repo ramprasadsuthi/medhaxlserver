@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
     <title>Python Course</title>
-</head>
-<body class="bg-gray-100 text-gray-900">
+  </head>
+  <body class="bg-gray-100 text-gray-900">
     <nav class="bg-indigo-800 p-4 shadow-lg">
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center">
@@ -30,62 +33,82 @@
     </nav>
 
     <section class="container mx-auto px-4 py-10">
-        <div class="flex items-center mb-4">
-            <img src="data:image/jpeg;base64,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" alt="Course Image" class="w-1/4 mr-6"> <!-- Image left aligned -->
-            <div class="flex flex-col">
-                <div class="flex items-center">
-                    <h1 class="text-4xl font-bold">Python Programming</h1> <!-- Heading left aligned -->
-                    <span class="bg-yellow-500 text-white text-sm font-semibold px-2 py-1 rounded-full ml-2">Running Batch</span> <!-- New Batch tag -->
-                </div>
-                <h5 class="text-xl font-semibold text-red-600 text-center mt-2">Class Room & Online Sessions</h5> <!-- Next line -->
-            </div>
+      <div class="flex items-center mb-4">
+        <img src="img/python.JPG" alt="Python Programming" class="w-1/4 mr-6 mb-4 md:mb-0"> <!-- Image left aligned -->
+        <div class="flex flex-col">
+          <div class="flex items-center">
+            <h1 class="text-4xl font-bold">Python Programming</h1>
+            <!-- Heading left aligned -->
+            <span
+              class="bg-yellow-500 text-white text-sm font-semibold px-2 py-1 rounded-full ml-2"
+              >New Batch</span
+            >
+            <!-- New Batch tag -->
+          </div>
+          <h5 class="text-xl font-semibold text-red-600 text-center mt-2">
+            Class Room & Online Sessions
+          </h5>
+          <!-- Next line -->
         </div>
-        <p class="text-lg text-center mb-6">This course covers the fundamental concepts of Python programming, including syntax, data structures, and best practices.</p>
-        
-        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
-            <h3 class="text-2xl font-semibold mb-4">What You Will Learn:</h3>
-            <ul class="list-disc list-inside mb-4">
-                <li>Introduction to Python and its Applications</li>
-                <li>Python Syntax and Semantics</li>
-                <li>Data Structures: Lists, Tuples, Dictionaries, and Sets</li>
-                <li>Control Flow and Loops</li>
-                <li>Functions and Modules</li>
-                <li>File Handling</li>
-                <li>Object-Oriented Programming in Python</li>
-                <li>Working with Libraries: NumPy, Pandas, and more</li>
-            </ul>
-        </div>
+      </div>
+      <p class="text-lg text-center mb-6">
+        This course covers the fundamental concepts of Python programming,
+        including syntax, data structures, and best practices.
+      </p>
 
-        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
-            <h3 class="text-2xl font-semibold mb-4">Who Should Enroll:</h3>
-            <p>This course is ideal for:</p>
-            <ul class="list-disc list-inside">
-                <li>Beginners looking to start a career in software development</li>
-                <li>Professionals seeking to enhance their programming skills</li>
-                <li>Anyone interested in learning Python for data science or automation</li>
-            </ul>
-        </div>
+      <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+        <h3 class="text-2xl font-semibold mb-4">What You Will Learn:</h3>
+        <ul class="list-disc list-inside mb-4">
+          <li>Introduction to Python and its Applications</li>
+          <li>Python Syntax and Semantics</li>
+          <li>Data Structures: Lists, Tuples, Dictionaries, and Sets</li>
+          <li>Control Flow and Loops</li>
+          <li>Functions and Modules</li>
+          <li>File Handling</li>
+          <li>Object-Oriented Programming in Python</li>
+          <li>Working with Libraries: NumPy, Pandas, and more</li>
+        </ul>
+      </div>
 
-        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
-            <h3 class="text-2xl font-semibold mb-4">Course Duration:</h3>
-            <p>Duration: 30 Days (1 to 1.5 Hour per Day)</p>
-        </div>
+      <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+        <h3 class="text-2xl font-semibold mb-4">Who Should Enroll:</h3>
+        <p>This course is ideal for:</p>
+        <ul class="list-disc list-inside">
+          <li>Beginners looking to start a career in software development</li>
+          <li>Professionals seeking to enhance their programming skills</li>
+          <li>
+            Anyone interested in learning Python for data science or automation
+          </li>
+        </ul>
+      </div>
 
-        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
-            <h3 class="text-2xl font-semibold mb-4">Enroll Now!</h3>
-            <p class="text-lg text-center">Ready to kickstart your Python programming career? 
-                <a href="contact.html" class="text-indigo-600 hover:underline">Enroll Now</a>!
-            </p>
-            <div class="text-center mt-4">
-                <a href="https://wa.me/9989443915" target="_blank" class="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-400 transition inline-flex items-center">
-                    <img src="img/whatsapp.jpg" alt="WhatsApp" class="h-6 w-6 mr-2"> Contact us on WhatsApp
-                </a>
-            </div>
-        </div>
+      <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+        <h3 class="text-2xl font-semibold mb-4">Course Duration:</h3>
+        <p>Duration: 45 Days (1 to 1.5 Hour per Day)</p>
+      </div>
 
+      <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+        <h3 class="text-2xl font-semibold mb-4">Enroll Now!</h3>
+        <p class="text-lg text-center">
+          Ready to kickstart your Python programming career?
+          <a href="contact.html" class="text-indigo-600 hover:underline"
+            >Enroll Now</a
+          >!
+        </p>
+        <div class="text-center mt-4">
+          <a
+            href="https://wa.me/9989443915"
+            target="_blank"
+            class="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-400 transition inline-flex items-center"
+          >
+            <img src="img/whatsapp.jpg" alt="WhatsApp" class="h-6 w-6 mr-2" />
+            Contact us on WhatsApp
+          </a>
+        </div>
+      </div>
     </section>
     <footer class="bg-indigo-800 text-center py-4">
-        <p class="text-white">&copy; 2024 Medha XL. All rights reserved.</p>
+      <p class="text-white">&copy; 2024 Medha XL. All rights reserved.</p>
     </footer>
-</body>
+  </body>
 </html>
