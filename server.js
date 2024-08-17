@@ -11,6 +11,7 @@ const PORT = 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+<<<<<<< HEAD
 // MySQL connection
 const db = mysql.createConnection({
     host: 'localhost',
@@ -47,6 +48,19 @@ app.post('/register', (req, res) => {
 });
 
 
+=======
+/*
+checking git merge updated 
+exanpl edited code
+
+console.log(123); 456
+
+console.log(123); 123-999
+
+console.log(123);console.log(123);console.log(123);
+*/
+//this is edited file by rishi aug 13 19:30
+>>>>>>> 8e2772fa42493e8f43441ed7c52a1217f103c5fa
 
 // Serve static files from the "src" directory
 app.use(express.static(path.join(__dirname, 'src')));
